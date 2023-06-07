@@ -48,13 +48,15 @@ export default {
     lodajStudente() {
 		
       let studenti = JSON.parse(localStorage.getItem("studenti"));
-	  debugger;
+	 
       if (studenti && studenti.length > 0) {
         this.sviStudenti = [...studenti];
         this.zadovoljili = [...studenti];
         this.nisuZadovoljili = [...studenti];
       }
     },
+
+	
   },
   created ()
   {

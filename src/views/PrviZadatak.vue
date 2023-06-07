@@ -83,11 +83,11 @@
 
                 <v-col>
                   <v-btn
-                    color="grey"
-                    class="white--text"
+                    color="green"
+                    class="black--text"
                     elevation="0"
                     outlined
-                    
+					:disabled="isDisable()"
                     @click="dodajStudenta()"
                   >
                     OK
@@ -147,6 +147,12 @@ export default {
 
   watch: {},
   methods: {
+	isDisable() {
+
+		if (this.pod0 == "" && this.pod1 == "" && this.pod2 == "" && this.pod3 == "" && this.pod4 == "" && this.pod5 == "" )
+		{return true;}
+    	
+  },
     cleanUp() {
       this.pod0 = "";
       this.pod1 = "";
@@ -175,7 +181,7 @@ export default {
           drugiKolokvij: this.pod5,
           kontinuiranoPracenje: this.pod6,
         };
-		debugger;
+		
         //ovo ne diraj
         let studenti = JSON.parse(localStorage.getItem("studenti"));
         if (!studenti) {
